@@ -18,7 +18,7 @@ You can configure this plugin in `_config.yml`.
 deploy:
   type: rsync
   host: <host>
-  user: <user>
+  user: <user> # Default is user running the deploy command
   root: <root>
   port: [port] # Default is 22
   delete: [true|false] # Default is true
@@ -35,6 +35,14 @@ deploy:
 - **args**: Rsync arguments
 - **verbose**: Display verbose messages
 - **ignore_errors**: Ignore errors
+
+Note: if you define the user and port needed to connect in your `~/.ssh/config` file, you do not need to specify them in here. You can also use an alias as the `host`, if you specify the hostname to connect to in `~/.ssh/config`.  
+Example `~/.ssh/config`:
+
+    Host my_web_server
+      Hostname dm8723.my-host.com
+      User potato
+      Port 2222
 
 ## License
 
